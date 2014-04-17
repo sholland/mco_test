@@ -1,0 +1,22 @@
+# Zed::Task
+
+task => {
+  meta => {
+    name => 'mcollective'
+    version => '0.0.1'
+  }
+
+  param => {
+    #plugin_location not blank
+    request => {
+      hostname default 'd0p1v102mgmt-vcd-a.prod.vpc.vmw'
+    }
+    options => {
+      environment default 'deploy'
+      debug default true
+    }
+  }
+
+  #start => plugin.mcollective.location(plugin_location)
+  start => plugin.mcollective
+}
